@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telmon Maluleka | Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: auto; /* Allow scrolling */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Added text-shadow for readability */
+            height: 100%; /* Ensure body takes full height */
+        }
+
+        /* Background styling */
+        #matrix-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: -1;
+            pointer-events: none; /* Allow content to interact with the background */
+        }
+
+        .matrix-row {
+            position: absolute;
+            top: 0;
+            width: 1em;
+            height: 100%;
+            overflow: hidden;
+            animation: drop 5s linear infinite;
+        }
+
+        .matrix-row span {
+            display: block;
+            color: limegreen;
+            font-family: monospace;
+            font-size: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fade 0.5s linear infinite;
+        }
+
+        @keyframes drop {
+            0% { transform: translateY(-100%); opacity: 0; }
+            25% { opacity: 0.5; }
+            50% { opacity: 1; }
+            75% { opacity: 0.5; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+
+        @keyframes fade {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* Header and content */
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        header h1 {
+            font-size: 3rem; /* Changed to rem for better scaling */
+            animation: fade-in 2s ease-in-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: limegreen;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            margin: 10px auto;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        .project {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid limegreen;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .project h3 {
+            color: limegreen;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            margin: 10px 0;
+            font-size: 1em;
+            color: white;
+        }
+
+        .project a {
+            display: inline-block;
+            margin-top: 10px;
+            color: limegreen;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem; /* Improved scaling for mobile */
+            }
+            section {
+                padding: 20px;
+            }
+            .project {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem; /* Smaller font on very small screens */
+            }
+            section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Matrix Background -->
+    <div id="matrix-background"></div>
+
+    <header>
+        <h1>Telmon Maluleka</h1>
+        <nav>
+            <ul>
+                <li><a href="https://github.com/telmon95" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/telmon-maluleka-9a0699146" target="_blank">LinkedIn</a></li>
+                <li><a href="https://twitter.com/DEOXYRIBOSE404" target="_blank">Twitter</a></li>
+                <li><a href="https://wa.me/27691119555" target="_blank">WhatsApp</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a Full-Stack Software Developer Student and Tech Enthusiast skilled in C, Python, JavaScript, HTML, CSS, and TypeScript. I work with frameworks like React, Django, Flask, and Node.js, and have experience with MySQL databases and Git.</p>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools">
+        <h2>🛠️ Tools & Technologies</h2>
+        <ul>
+            <li><strong>Programming Languages:</strong> C, Python, JavaScript, HTML, CSS, TypeScript</li>
+            <li><strong>Frameworks:</strong> React, Django, Flask, Node.js</li>
+            <li><strong>Databases:</strong> MySQL</li>
+            <li><strong>Other:</strong> Git</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div id="project-container">
+            <div class="project">
+                <h3>Weather Widget</h3>
+                <p>A simple, responsive weather widget that displays real-time weather data using the OpenWeatherMap API.</p>
+                <a href="https://dashing-shortbread-8104f8.netlify.app/" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me on any platform:</p>
+        <ul>
+            <li><a href="https://instagram.com/one.one.oneone" target="_blank">Instagram</a></li>
+            <li><a href="https://github.com/telmon95" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/telmon-maluleka-9a0699146" target="_blank">LinkedIn</a></li>
+            <li><a href="https://twitter.com/DEOXYRIBOSE404" target="_blank">Twitter</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Telmon Maluleka. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Generate the Matrix effect
+        const matrixBackground = document.getElementById('matrix-background');
+        const columns = Math.floor(window.innerWidth / 20);
+
+        for (let i = 0; i < columns; i++) {
+            const column = document.createElement('div');
+            column.classList.add('matrix-row');
+            column.style.left = `${i * 20}px`;
+
+            for (let j = 0; j < 30; j++) { // Reduced number of rows for performance
+                const value = document.createElement('span');
+                value.textContent = String.fromCharCode(33 + Math.random() * 94); // Random ASCII character
+                value.style.animationDelay = `${Math.random() * 5}s`;
+                column.appendChild(value);
+            }
+
+            matrixBackground.appendChild(column);
+        }
+    </script>
+</body>
+</html>
